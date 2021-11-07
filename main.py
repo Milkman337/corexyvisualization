@@ -14,7 +14,7 @@ class Vector2:
 
 pygame.init()
 
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((500, 500))
 
 pygame.display.set_caption("Epic Pixel Art Game from ME")
 
@@ -65,40 +65,39 @@ while run:
 
 
     if left:
-        main.x -= 0.1
-        main.y -= 0.1
-        center_bottom_left_vec.y -= 0.1
-        center_top_left_vec.y -= 0.1
-        center_bottom_right_vec.y -= 0.1
-        center_top_right_vec.y -= 0.1
+        main.x -= 0.05
+        main.y -= 0.05
+        center_bottom_left_vec.y -= 0.05
+        center_top_left_vec.y -= 0.05
+        center_bottom_right_vec.y -= 0.05
+        center_top_right_vec.y -= 0.05
 
     if right:
-        main.x += 0.1
-        main.y += 0.1
-        center_bottom_left_vec.y += 0.1
-        center_top_left_vec.y += 0.1
-        center_bottom_right_vec.y += 0.1
-        center_top_right_vec.y += 0.1
+        main.x += 0.05
+        main.y += 0.05
+        center_bottom_left_vec.y += 0.05
+        center_top_left_vec.y += 0.05
+        center_bottom_right_vec.y += 0.05
+        center_top_right_vec.y += 0.05
 
     if a:
-        main.x -= 0.1
-        main.y += 0.1
-        center_bottom_left_vec.y += 0.1
-        center_top_left_vec.y += 0.1
-        center_bottom_right_vec.y += 0.1
-        center_top_right_vec.y += 0.1
+        main.x -= 0.05
+        main.y += 0.05
+        center_bottom_left_vec.y += 0.05
+        center_top_left_vec.y += 0.05
+        center_bottom_right_vec.y += 0.05
+        center_top_right_vec.y += 0.05
 
     if d:
-        main.x += 0.1
-        main.y -= 0.1
-        center_bottom_left_vec.y -= 0.1
-        center_top_left_vec.y -= 0.1
-        center_bottom_right_vec.y -= 0.1
-        center_top_right_vec.y -= 0.1
+        main.x += 0.05
+        main.y -= 0.05
+        center_bottom_left_vec.y -= 0.05
+        center_top_left_vec.y -= 0.05
+        center_bottom_right_vec.y -= 0.05
+        center_top_right_vec.y -= 0.05
 
     screen.fill((0,0,0))
 
-    squ = pygame.draw.rect(screen, (255,0,0), (main.x-2.5,main.y-10,5,20))
     top_left = pygame.draw.rect(screen, (255,255,255), (50,50,5,5))
     top_right = pygame.draw.rect(screen, (255,255,255), (450,50,5,5))
     bottom_left = pygame.draw.rect(screen, (255,255,255), (50,450,5,5))
@@ -132,6 +131,8 @@ while run:
     center_bottom_left_to_center = pygame.draw.line(screen, (0,0,255), (center_bottom_left_vec.x, center_bottom_left_vec.y), (main.x, center_bottom_left_vec.y), 1)
     center_bottom_right_to_center = pygame.draw.line(screen, (0,255,0), (center_bottom_right_vec.x, center_bottom_right_vec.y), (main.x, center_bottom_right.y), 1)
     center_top_left_to_center = pygame.draw.line(screen, (0,255,0), (center_top_left_vec.x, center_top_left_vec.y), (main.x, center_top_left_vec.y), 1)
-    center_top_right_to_center = pygame.draw.line(screen)
+    center_top_right_to_center = pygame.draw.line(screen, (0,0,255), (center_top_right_vec.x, center_top_right_vec.y), (main.x, center_top_right_vec.y), 1)
+
+    squ = pygame.draw.rect(screen, (255,0,0), (main.x-2.5,main.y-11,5,22))
 
     pygame.display.update()
